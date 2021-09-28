@@ -1,5 +1,8 @@
-# downloads/
-# output/
-# storage/
-# watch/
-# transcode/
+downloads/
+output/
+storage/
+watch/
+transcode/
+config/
+temp/
+data/
