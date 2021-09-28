@@ -13,7 +13,7 @@ services:
     ports:
       - "3003:5800"
     volumes:
-      - "/home/njkwilson/Docker/handbrake/config:/config:rw"
-      - "/home/njkwilson/Docker/handbrake/storage:/storage:ro"
-      - "/home/njkwilson/Docker/handbrake/input:/watch:rw"
-      - "/home/njkwilson/Docker/handbrake/output:/output:rw"
+      - "./config:/config:rw"
+      - "./storage:/storage:ro"
+      - "./input:/watch:rw"
+      - "./output:/output:rw"

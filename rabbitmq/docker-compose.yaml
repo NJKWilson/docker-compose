@@ -7,7 +7,7 @@ services:
         - 5672:5672
         - 15672:15672
     volumes:
-        - /home/njkwilson/Docker/rabbitmq/data:/var/lib/rabbitmq
-        - /home/njkwilson/Docker/rabbitmq/log:/var/log/rabbitmq
+        - ./data:/var/lib/rabbitmq
+        - ./log:/var/log/rabbitmq
     network_mode:
         bridge

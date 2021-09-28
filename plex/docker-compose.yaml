@@ -8,8 +8,8 @@ services:
       - PLEX_CLAIM=claim-5ysRtwNvndXtzETs2TwJ
       # - ADVERTISE_IP=http://<hostIPAddress>:32400/
     volumes:
-      - /home/njkwilson/Docker/plex/config:/config
-      - /home/njkwilson/Docker/plex/temp:/transcode
+      - ./config:/config
+      - ./temp:/transcode
       - /mnt/Media:/data    
     hostname: PlexServer
     network_mode: host

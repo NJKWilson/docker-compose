@@ -9,8 +9,8 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /home/njkwilson/Docker/sonarr/config:/config
-      - /home/njkwilson/Docker/handbrake/output:/downloads #optional
+      - ./config:/config
+      - ../handbrake/output:/downloads #optional
       - /mnt/Media/TvShows:/tv #optional
     network_mode: bridge
     ports:
