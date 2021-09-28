@@ -1,0 +1,11 @@
+---
+version: "3"
+services:
+  sonarr:
+    image: selenium/standalone-chrome:94.0.4606.54-chromedriver-94.0.4606.41
+    container_name: chrome94
+    shm_size: 2gb
+    network_mode: bridge
+    ports:
+      - 4444:4444
+    restart: unless-stopped

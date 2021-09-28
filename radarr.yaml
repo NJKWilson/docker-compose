@@ -1,0 +1,18 @@
+---
+version: "3"
+services:
+  radarr:
+    image: ghcr.io/linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/njkwilson/Docker/radarr/config:/config
+      - /home/njkwilson/Docker/handbrake/output:/downloads #optional
+      - /mnt/Media/Movies:/movies #optional
+    network_mode: bridge
+    ports:
+      - 3002:7878
+    restart: unless-stopped

@@ -1,0 +1,19 @@
+version: '3'
+services:
+  handbrake:
+    image: jlesage/handbrake
+    container_name: handbrake
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - AUTOMATED_CONVERSION_PRESET=njkwilson/Fast1080QSV
+    network_mode: bridge
+    devices: 
+      - /dev/dri
+    ports:
+      - "3003:5800"
+    volumes:
+      - "/home/njkwilson/Docker/handbrake/config:/config:rw"
+      - "/home/njkwilson/Docker/handbrake/storage:/storage:ro"
+      - "/home/njkwilson/Docker/handbrake/input:/watch:rw"
+      - "/home/njkwilson/Docker/handbrake/output:/output:rw"

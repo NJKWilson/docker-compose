@@ -1,0 +1,18 @@
+---
+version: "3"
+services:
+  sonarr:
+    image: ghcr.io/linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/njkwilson/Docker/sonarr/config:/config
+      - /home/njkwilson/Docker/handbrake/output:/downloads #optional
+      - /mnt/Media/TvShows:/tv #optional
+    network_mode: bridge
+    ports:
+      - 3001:8989
+    restart: unless-stopped

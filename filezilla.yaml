@@ -1,0 +1,17 @@
+---
+version: "2.1"
+services:
+  filezilla:
+    image: ghcr.io/linuxserver/filezilla
+    container_name: filezilla
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/njkwilson/Docker/filezilla/config:/config
+      - /home/njkwilson/Docker/filezilla/downloads:/downloads
+    network_mode: bridge
+    ports:
+      - 3004:3000
+    restart: unless-stopped
