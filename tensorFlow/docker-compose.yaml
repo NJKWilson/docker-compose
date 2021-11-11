@@ -1,0 +1,21 @@
+---
+version: "3"
+services:
+  tensorflow:
+    image: tensorflow/tensorflow:latest-gpu-jupyter
+    container_name: tensorFlow
+    volumes:
+      - ./notebooks:/tf/notebooks
+    network_mode: bridge
+    ports:
+      - 8888:8888
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['1']
+            capabilities: [gpu]
+
+
